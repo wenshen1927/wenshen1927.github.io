@@ -92,7 +92,7 @@
 <meta property="og:description" content="用策略模式去掉冗杂的if-else吧">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://images2.imgbox.com/71/42/Kvwusirn_o.jpg">
-<meta property="og:updated_time" content="2019-12-26T14:45:31.097Z">
+<meta property="og:updated_time" content="2020-01-01T06:37:01.785Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式-策略模式">
 <meta name="twitter:description" content="用策略模式去掉冗杂的if-else吧">
@@ -362,7 +362,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://images2.imgbox.com/71/42/Kvwusirn_o.jpg" rel="gallery_ck4h7jj590009pwvm9gsxs5fh" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://images2.imgbox.com/71/42/Kvwusirn_o.jpg" rel="gallery_ck6ewugtj000jpovm0nw9n95m" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://images2.imgbox.com/71/42/Kvwusirn_o.jpg" itemprop="contentUrl">
               </a>
             
@@ -374,18 +374,25 @@
       
 
       
-        <h1 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h1><blockquote>
-<p>设计原则一：找出应用中可能需要变化之处，把她们独立出来封装起来，以便以后可以轻易地改动或扩充，不要和那些不变的代码混在一起。这样代码变化引起的不经意后果变少，系统更加有弹性。</p>
+        <h1 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h1><p>1、先导问题</p>
+<p>2、什么是策略模式</p>
+<p>3、优缺点</p>
+<p>4、总结</p>
+<blockquote>
+<p>设计原则一：<strong>找出应用中可能需要变化之处，把她们独立出来封装起来，以便以后可以轻易地改动或扩充，不要和那些不变的代码混在一起。这样代码变化引起的不经意后果变少，系统更加有弹性。</strong></p>
 </blockquote>
 <blockquote>
-<p>设计原则二：针对接口编程，而不是针对实现编程</p>
+<p>设计原则二：<strong>针对接口编程，而不是针对实现编程</strong></p>
 </blockquote>
 <blockquote>
-<p>设计原则三：多用组合，少用继承。使用组合有较好的的弹性。</p>
+<p>设计原则三：<strong>多用组合，少用继承。使用组合有较好的的弹性。</strong></p>
 </blockquote>
 <p>什么是策略模式？</p>
 <p><strong>策略模式</strong>定义了算法族，分别封装起来，让它们之间可以互相替换，此模式让算法的变化独立于使用算法的客户。</p>
 <p>这些抽出来的算法也可以被其他类复用。</p>
+<p>策略模式构成要素：</p>
+<p>策略+工厂</p>
+<p>工厂用来生成算法的实例，策略用来实现算法和设置算法 </p>
 <p>策略模式有优点：</p>
 <ul>
 <li>消除if-else</li>
@@ -441,6 +448,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/29/2019年，再见了/" rel="prev" title="2019年，再见了">
+                2019年，再见了 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -515,7 +526,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -526,7 +537,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -537,7 +548,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -597,7 +608,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
