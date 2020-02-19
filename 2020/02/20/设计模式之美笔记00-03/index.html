@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="设计模式,代码质量,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="00 | 引言 写烂代码和好代码花费的时间是差不多的 写好的代码一开始可能比较不自在，但是原来的那种自在实际上是某种混乱，可能会引发更多的时间来修改，所以一开始就关注代码质量，实际上是节省时间的。并且一旦培养成写高质量代码的习惯，并不会多花多少时间。   当你把写高质量代码培养成一种开发习惯之后，在你在编写代码的时候，自然就有一种代码质量意识，自然而然就可以写出不错的代码 至少要知道什么是高质量的">
+<meta name="keywords" content="设计模式,代码质量">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式之美笔记00-03">
+<meta property="og:url" content="http://yoursite.com/2020/02/20/设计模式之美笔记00-03/index.html">
+<meta property="og:site_name" content="CleanMoon">
+<meta property="og:description" content="00 | 引言 写烂代码和好代码花费的时间是差不多的 写好的代码一开始可能比较不自在，但是原来的那种自在实际上是某种混乱，可能会引发更多的时间来修改，所以一开始就关注代码质量，实际上是节省时间的。并且一旦培养成写高质量代码的习惯，并不会多花多少时间。   当你把写高质量代码培养成一种开发习惯之后，在你在编写代码的时候，自然就有一种代码质量意识，自然而然就可以写出不错的代码 至少要知道什么是高质量的">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/2020/02/20/设计模式之美笔记00-03/url">
+<meta property="og:updated_time" content="2020-02-19T16:57:10.085Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="设计模式之美笔记00-03">
+<meta name="twitter:description" content="00 | 引言 写烂代码和好代码花费的时间是差不多的 写好的代码一开始可能比较不自在，但是原来的那种自在实际上是某种混乱，可能会引发更多的时间来修改，所以一开始就关注代码质量，实际上是节省时间的。并且一旦培养成写高质量代码的习惯，并不会多花多少时间。   当你把写高质量代码培养成一种开发习惯之后，在你在编写代码的时候，自然就有一种代码质量意识，自然而然就可以写出不错的代码 至少要知道什么是高质量的">
+<meta name="twitter:image" content="http://yoursite.com/2020/02/20/设计模式之美笔记00-03/url">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/02/20/设计模式之美笔记00-03/">
+
+
+
+
+
+  <title>设计模式之美笔记00-03 | CleanMoon</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">CleanMoon</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">白月光</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/20/设计模式之美笔记00-03/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhyn Chris">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CleanMoon">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">设计模式之美笔记00-03</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-20T00:56:29+08:00">
+                2020-02-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox" href="/url" rel="gallery_ck6tk7ylk001otovmznr4x5ks" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="/url" itemprop="contentUrl">
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
+
+      
+        <h1 id="00-引言"><a href="#00-引言" class="headerlink" title="00 | 引言"></a>00 | 引言</h1><ol>
+<li>写烂代码和好代码花费的时间是差不多的<ul>
+<li>写好的代码一开始可能比较不自在，但是原来的那种自在实际上是某种混乱，可能会引发更多的时间来修改，所以一开始就关注代码质量，实际上是节省时间的。并且一旦培养成写高质量代码的习惯，并不会多花多少时间。</li>
+</ul>
+</li>
+<li>当你把写高质量代码培养成一种开发习惯之后，在你在编写代码的时候，自然就有一种代码质量意识，自然而然就可以写出不错的代码</li>
+<li>至少要知道什么是高质量的代码<ul>
+<li>高质量的代码有一定的原则和方法</li>
+</ul>
+</li>
+<li>最有效、最快速提高编码能力的方法就是，找一个比你资深的工程师，一对一、手把手地指导你写代码。你提交代码，他来指出你的问题，你再优化，这样一来一往，要不了多久，你就会发现，自己的代码能力突飞猛进<ul>
+<li>实际情况是，大家都忙着迭代，谁会一行一行地帮你批改代码呢，遇到这样的大佬也太幸运了</li>
+</ul>
+</li>
+</ol>
+<h1 id="01-为什么每个程序员都要尽快地学习并掌握设计模式相关知识"><a href="#01-为什么每个程序员都要尽快地学习并掌握设计模式相关知识" class="headerlink" title="01 | 为什么每个程序员都要尽快地学习并掌握设计模式相关知识"></a>01 | 为什么每个程序员都要尽快地学习并掌握设计模式相关知识</h1><ol>
+<li>设计模式和数据结构算法更容易直接转化为生产力，了解学习设计模式相关知识能直接提高开发能力。</li>
+<li>为什么学习设计模式<ul>
+<li>平时积累，应对面试设计</li>
+<li><strong>避免写烂代码</strong>，写规范的、设计合理、分层清晰、模块化、代码结构清晰、松耦合的代码。写好代码，会让别人对你的代码产生好感。</li>
+<li><strong>提高复杂代码的设计和开发能力</strong></li>
+<li><strong>读源码、学框架的需要</strong>（实际上，除了看不懂、看不下去的问题，还有一个隐藏的问题，你可能自己都发现不了，那就是你自己觉得看懂了，实际上，里面的精髓你并没有 get 到多少！因为优秀的开源项目、框架、中间件，就像一个集各种高精尖技术在一起的战斗机。如果你想剖析它的原理、学习它的技术，而你没有积累深厚的基本功，就算把这台战斗机摆在你面前，你也不能完全参透它的精髓，只是了解个皮毛，看个热闹而已。）</li>
+<li><strong>通往更高层次必须要买过去的坎</strong>，无论是评审其他人、代码还是带团队还是保证系统稳定性</li>
+<li><strong>投资要趁早</strong>，这样我们才能尽早享受复利。同样，有些能力，要早点锻炼；有些东西，要早点知道；有些书，要早点读。这样在你后面的生活、工作、学习中，才能一直都发挥作用。不要等到好多年后，看到了，才恍然大悟，后悔没有早点去学、去看。内功要尽早学习，日后公里才能深厚。</li>
+</ul>
+</li>
+</ol>
+<h1 id="02-从哪些维度评判代码质量的好坏？如何具备写出高质量代码的能力？"><a href="#02-从哪些维度评判代码质量的好坏？如何具备写出高质量代码的能力？" class="headerlink" title="02 | 从哪些维度评判代码质量的好坏？如何具备写出高质量代码的能力？"></a>02 | 从哪些维度评判代码质量的好坏？如何具备写出高质量代码的能力？</h1><ol>
+<li>实际上，我们很难通过其中的某个或者某几个词汇来全面地评价代码质量</li>
+<li>除此之外，不同的评价维度也并不是完全独立的，有些是具有包含关系、重叠关系或者可以互相影响的。比如，代码的可读性好、可扩展性好，就意味着代码的可维护性好。而且，各种评价维度也不是非黑即白的。比如，我们不能简单地将代码分为可读与不可读。如果用数字来量化代码的可读性的话，它应该是一个连续的区间值，而非 0、1 这样的离散值。</li>
+<li>对一段代码的质量评价，常常有很强的主观性。跟工程师自身的经验有极大的关系。自己闷头写，写得多也不一定有提高。</li>
+</ol>
+<p>最常见的评价标准：</p>
+<h2 id="可维护性"><a href="#可维护性" class="headerlink" title="可维护性"></a>可维护性</h2><ul>
+<li>所谓的“维护”无外乎就是修改 bug、修改老的代码、添加新的代码之类的工作。所谓“代码易维护”就是指，在不破坏原有代码设计、不引入新的 bug 的情况下，能够快速地修改或者添加代码。所谓“代码不易维护”就是指，<strong>修改或者添加代码需要冒着极大的引入新 bug 的风险，并且需要花费很长的时间才能完成。</strong></li>
+<li>对于一个项目来说，<strong>维护代码的时间远远大于编写代码的时间</strong></li>
+<li>代码的可维护性是由很多因素协同作用的结果。代码的可读性好、简洁、可扩展性好，就会使得代码易维护。</li>
+<li>更细化地讲，如果<strong>代码分层清晰、模块化好、高内聚低耦合、遵从基于接口而非实现编程的设计原则</strong>等等，那就可能意味着代码易维护</li>
+<li>代码的易维护性还跟<strong>项目代码量的多少、业务的复杂程度、利用到的技术的复杂程度、文档是否全面、团队成员的开发水平</strong>等诸多因素有关。</li>
+</ul>
+<h2 id="可读性"><a href="#可读性" class="headerlink" title="可读性"></a>可读性</h2><ul>
+<li>代码被阅读的次数远远超过被编写和执行的次数</li>
+<li>代码的可读性应该是评价代码质量最重要的指标之一</li>
+<li>代码的可读性在非常大程度上会影响代码的可维护性</li>
+<li>我们需要看代码是否符合编码规范、命名是否达意、注释是否详尽、函数是否长短合适、模块划分是否清晰、是否符合高内聚低耦合等等</li>
+</ul>
+<h2 id="可扩展性"><a href="#可扩展性" class="headerlink" title="可扩展性"></a>可扩展性</h2><ul>
+<li>它表示我们的代码应对未来需求变化的能力。</li>
+<li>代码是否易扩展也很大程度上决定代码是否易维护</li>
+<li>我们在不修改或少量修改原有代码的情况下，通过扩展的方式添加新的功能代码。</li>
+</ul>
+<h2 id="灵活性"><a href="#灵活性" class="headerlink" title="灵活性"></a>灵活性</h2><ul>
+<li>同样是很抽象的评价。如果一段代码易扩展、易复用或者易用，我们都可以称这段代码写得比较灵活。</li>
+</ul>
+<h2 id="简洁性"><a href="#简洁性" class="headerlink" title="简洁性"></a>简洁性</h2><ul>
+<li>KISS 原则：“Keep It Simple，Stupid”。这个原则说的意思就是，尽量保持代码简单。代码简单、逻辑清晰，也就意味着易读、易维护。</li>
+</ul>
+<h2 id="可复用性"><a href="#可复用性" class="headerlink" title="可复用性"></a>可复用性</h2><ul>
+<li>代码的可复用性可以简单地理解为，尽量减少重复代码的编写，复用已有的代码</li>
+</ul>
+<h2 id="可测试性"><a href="#可测试性" class="headerlink" title="可测试性"></a>可测试性</h2><ul>
+<li>代码的可测试性差，比较难写单元测试，那基本上就能说明代码设计得有问题。</li>
+</ul>
+<p>面向对象中的继承、多态能让我们写出可复用的代码；编码规范能让我们写出可读性好的代码；设计原则中的单一职责、DRY、基于接口而非实现、里式替换原则等，可以让我们写出可复用、灵活、可读性好、易扩展、易维护的代码；设计模式可以让我们写出易扩展的代码；持续重构可以时刻保持代码的可维护性等等。</p>
+<p>要写出高质量代码，我们就需要掌握一些更加细化、更加能落地的编程方法论，这就包含面向对象设计思想、设计原则、设计模式、编码规范、重构技巧等等</p>
+<h1 id="03-面向对象、设计原则、设计模式、编程规范、重构，这五者有何关系？"><a href="#03-面向对象、设计原则、设计模式、编程规范、重构，这五者有何关系？" class="headerlink" title="03 | 面向对象、设计原则、设计模式、编程规范、重构，这五者有何关系？"></a>03 | 面向对象、设计原则、设计模式、编程规范、重构，这五者有何关系？</h1><h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><ul>
+<li>面向对象的四大特性：封装、抽象、继承、多态</li>
+<li>面向对象编程与面向过程编程的区别和联系</li>
+<li>面向对象分析、面向对象设计、面向对象编程</li>
+<li>接口和抽象类的区别以及各自的应用场景</li>
+<li>基于接口而非实现编程的设计思想</li>
+<li>多用组合少用继承的设计思想</li>
+<li>面向过程的贫血模型和面向对象的充血模型</li>
+</ul>
+<h2 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h2><p>要知道设计原则是为了解决什么编程问题，应用在什么场景中，而不是单纯的记忆</p>
+<ul>
+<li>SOLID 原则 -SRP 单一职责原则</li>
+<li>SOLID 原则 -OCP 开闭原则</li>
+<li>SOLID 原则 -LSP 里式替换原则</li>
+<li>SOLID 原则 -ISP 接口隔离原则</li>
+<li>SOLID 原则 -DIP 依赖倒置原则</li>
+<li>DRY 原则、KISS 原则、YAGNI 原则、LOD 法则</li>
+</ul>
+<h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><p>设计模式是针对软件开发中经常遇到的一些设计问题，总结出来的一套解决方案或者设计思路。大部分设计模式要解决的都是<strong>代码的可扩展性问题</strong>。设计模式相对于设计原则来说，没有那么抽象，而且大部分都不难理解，代码实现也并不复杂。这一块的学习难点是了解它们都<strong>能解决哪些问题，掌握典型的应用场景</strong>，并且懂得不过度应用。</p>
+<ul>
+<li>创建型常用的有：单例模式、工厂模式（工厂方法和抽象工厂）、建造者模式。<ul>
+<li>不常用的有：原型模式。</li>
+</ul>
+</li>
+<li>结构型常用的有：代理模式、桥接模式、装饰者模式、适配器模式。<ul>
+<li>不常用的有：门面模式、组合模式、享元模式。</li>
+</ul>
+</li>
+<li>行为型常用的有：观察者模式、模板模式、策略模式、职责链模式、迭代器模式、状态模式。<ul>
+<li>不常用的有：访问者模式、备忘录模式、命令模式、解释器模式、中介模式。</li>
+</ul>
+</li>
+</ul>
+<h2 id="编程规范"><a href="#编程规范" class="headerlink" title="编程规范"></a>编程规范</h2><p>编程规范主要解决的是代码的可读性问题。编码规范相对于设计原则、设计模式，更加具体、更加偏重代码细节。即便你可能对设计原则不熟悉、对设计模式不了解，但你最起码要掌握基本的编码规范，比如，如何给变量、类、函数命名，如何写代码注释，函数不宜过长、参数不能过多等等。</p>
+<p>最起码要做到规范！！！</p>
+<h2 id="代码重构"><a href="#代码重构" class="headerlink" title="代码重构"></a>代码重构</h2><ul>
+<li>持续重构是保持代码质量不下降的有效手段，能有效避免代码腐化到无可救药的地步。</li>
+<li>重构的目的（why）、对象（what）、时机（when）、方法（how）；</li>
+<li>保证重构不出错的技术手段：单元测试和代码的可测试性；</li>
+<li>两种不同规模的重构：大重构（大规模高层次）和小重构（小规模低层次）</li>
+<li>把重构当作开发的一部分，融入到日常的开发中。</li>
+</ul>
+<p><img src="https://static001.geekbang.org/resource/image/f3/d3/f3262ef8152517d3b11bfc3f2d2b12d3.png" alt="img"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
+          
+            <a href="/tags/代码质量/" rel="tag"># 代码质量</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/01/07/设计模式-迭代器模式/" rel="next" title="设计模式-迭代器模式">
+                <i class="fa fa-chevron-left"></i> 设计模式-迭代器模式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Zhyn Chris">
+            
+              <p class="site-author-name" itemprop="name">Zhyn Chris</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#00-引言"><span class="nav-number">1.</span> <span class="nav-text">00 | 引言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#01-为什么每个程序员都要尽快地学习并掌握设计模式相关知识"><span class="nav-number">2.</span> <span class="nav-text">01 | 为什么每个程序员都要尽快地学习并掌握设计模式相关知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#02-从哪些维度评判代码质量的好坏？如何具备写出高质量代码的能力？"><span class="nav-number">3.</span> <span class="nav-text">02 | 从哪些维度评判代码质量的好坏？如何具备写出高质量代码的能力？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#可维护性"><span class="nav-number">3.1.</span> <span class="nav-text">可维护性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可读性"><span class="nav-number">3.2.</span> <span class="nav-text">可读性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可扩展性"><span class="nav-number">3.3.</span> <span class="nav-text">可扩展性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#灵活性"><span class="nav-number">3.4.</span> <span class="nav-text">灵活性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简洁性"><span class="nav-number">3.5.</span> <span class="nav-text">简洁性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可复用性"><span class="nav-number">3.6.</span> <span class="nav-text">可复用性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可测试性"><span class="nav-number">3.7.</span> <span class="nav-text">可测试性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#03-面向对象、设计原则、设计模式、编程规范、重构，这五者有何关系？"><span class="nav-number">4.</span> <span class="nav-text">03 | 面向对象、设计原则、设计模式、编程规范、重构，这五者有何关系？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象"><span class="nav-number">4.1.</span> <span class="nav-text">面向对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设计原则"><span class="nav-number">4.2.</span> <span class="nav-text">设计原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设计模式"><span class="nav-number">4.3.</span> <span class="nav-text">设计模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编程规范"><span class="nav-number">4.4.</span> <span class="nav-text">编程规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码重构"><span class="nav-number">4.5.</span> <span class="nav-text">代码重构</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhyn Chris</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
